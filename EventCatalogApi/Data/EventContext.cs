@@ -39,12 +39,9 @@ namespace EventCatalogApi.Data
                .IsRequired()
                .HasMaxLength(100);  //Title is 100 characters or less
 
-          /* builder.Property(c => c.EventStartDate)
-               .IsRequired();*/
-            builder.Property(c => c.EventStartTime)
+               builder.Property(c => c.EventStartTime)
               .IsRequired();
-            /*builder.Property(c => c.EventEndDate)
-              .IsRequired();*/
+          
             builder.Property(c => c.EventEndTime)
               .IsRequired();
             builder.Property(c => c.Fee)
