@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B222A8B7-1DA8-4B3A-B22D-2EE782FE1714}"
 EndProject
@@ -9,7 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{0B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{5E0A86F6-C719-492B-B607-B195C87C168B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCatalogApi", "EventCatalogApi\EventCatalogApi.csproj", "{7E042BDB-F1BB-417C-AE0A-FE112D54B4CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCatalogApi", "EventCatalogApi\EventCatalogApi.csproj", "{7E042BDB-F1BB-417C-AE0A-FE112D54B4CA}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{24A578B3-5227-40F6-B56E-ED882D83F046}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebMvc", "WebMvc\WebMvc.csproj", "{871C84DB-EDC9-493D-B067-E6D810EC1EAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{7E042BDB-F1BB-417C-AE0A-FE112D54B4CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E042BDB-F1BB-417C-AE0A-FE112D54B4CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E042BDB-F1BB-417C-AE0A-FE112D54B4CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24A578B3-5227-40F6-B56E-ED882D83F046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24A578B3-5227-40F6-B56E-ED882D83F046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24A578B3-5227-40F6-B56E-ED882D83F046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24A578B3-5227-40F6-B56E-ED882D83F046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{871C84DB-EDC9-493D-B067-E6D810EC1EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{871C84DB-EDC9-493D-B067-E6D810EC1EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{871C84DB-EDC9-493D-B067-E6D810EC1EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{871C84DB-EDC9-493D-B067-E6D810EC1EAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -29,6 +41,7 @@ Global
 		{0B70A865-EFB8-4395-B1C0-A6E392BD5CE9} = {B222A8B7-1DA8-4B3A-B22D-2EE782FE1714}
 		{5E0A86F6-C719-492B-B607-B195C87C168B} = {B222A8B7-1DA8-4B3A-B22D-2EE782FE1714}
 		{7E042BDB-F1BB-417C-AE0A-FE112D54B4CA} = {0B70A865-EFB8-4395-B1C0-A6E392BD5CE9}
+		{871C84DB-EDC9-493D-B067-E6D810EC1EAE} = {5E0A86F6-C719-492B-B607-B195C87C168B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {307E4583-0A85-4B49-B830-72CAF7C7F59D}

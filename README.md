@@ -1,4 +1,5 @@
 # EventSparkApp
 
-
-https://www.youtube.com/watch?v=LeKb3Yf_FxI&feature=youtu.be
+ team project to create a similar website to Eventbrite.
+ Demo of project
+ https://www.youtube.com/watch?v=5HjQVSKSWDI

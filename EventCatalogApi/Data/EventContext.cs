@@ -1,10 +1,6 @@
 ﻿using EventCatalogApi.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EventCatalogApi.Data
 {
@@ -30,18 +26,18 @@ namespace EventCatalogApi.Data
 
         private void ConfigureEventItem(EntityTypeBuilder<EventItem> builder)
         {
-           builder.ToTable("EventIds");
-           builder.Property(c => c.Id)
-               .IsRequired()
-               .ForSqlServerUseSequenceHiLo("event_hilo");
+            builder.ToTable("EventIds");
+            builder.Property(c => c.Id)
+                .IsRequired()
+                .ForSqlServerUseSequenceHiLo("event_hilo");
 
-           builder.Property(c => c.Name)
-               .IsRequired()
-               .HasMaxLength(100);  //Title is 100 characters or less
+            builder.Property(c => c.Name)
+                .IsRequired()
+                .HasMaxLength(100);  //Title is 100 characters or less
 
-               builder.Property(c => c.EventStartTime)
-              .IsRequired();
-          
+            builder.Property(c => c.EventStartTime)
+           .IsRequired();
+
             builder.Property(c => c.EventEndTime)
               .IsRequired();
             builder.Property(c => c.Fee)
@@ -51,15 +47,15 @@ namespace EventCatalogApi.Data
                .WithMany()
                .HasForeignKey(c => c.EventTypeId);
 
-           builder.HasOne(c => c.EventLocation)
-               .WithMany()
-               .HasForeignKey(c => c.EventLocationId);
+            builder.HasOne(c => c.EventLocation)
+                .WithMany()
+                .HasForeignKey(c => c.EventLocationId);
 
-           builder.HasOne(c => c.EventDate)
-               .WithMany()
-               .HasForeignKey(c => c.EventDateId);
+            builder.HasOne(c => c.EventDate)
+                .WithMany()
+                .HasForeignKey(c => c.EventDateId);
         }
-        
+
         private void ConfigureEventType(EntityTypeBuilder<EventType> builder)
         {
             builder.ToTable("EventTypes");

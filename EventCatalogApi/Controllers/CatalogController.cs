@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using EventCatalogApi.Data;
+using EventCatalogApi.Domain;
+using EventCatalogApi.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using EventCatalogApi.Data;
-using EventCatalogApi.Domain;
-using EventCatalogApi.ViewModels;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace EventCatalogApi.Controllers
 {
@@ -25,7 +23,7 @@ namespace EventCatalogApi.Controllers
             _config = config;
         }
 
-        
+
         [HttpGet]
         [Route("[action]")]
         public async Task<IActionResult> Items(
@@ -52,7 +50,7 @@ namespace EventCatalogApi.Controllers
             return Ok(model);
         }
 
-        
+
         [HttpGet]
         [Route("[action]/type/{eventTypeId}/location/{eventLocationId}/date/{eventDateId}")]
         public async Task<IActionResult> Items(int? eventTypeId,
