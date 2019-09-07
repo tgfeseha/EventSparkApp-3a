@@ -64,28 +64,22 @@ namespace EventCatalogApi.Controllers
             {
                 root = root.Where(c => c.EventTypeId == eventTypeId);
             }
-
             if (eventLocationId.HasValue)
             {
                 root = root.Where(c => c.EventLocationId == eventLocationId);
             }
-
             if (eventDateId.HasValue)
             {
                 root = root.Where(c => c.EventDateId == eventDateId);
             }
-
             var totalItems = await root
                               .LongCountAsync();
-
             var itemsOnPage = await root
                               .OrderBy(c => c.Name)
                               .Skip(pageSize * pageIndex)
                               .Take(pageSize)
                               .ToListAsync();
-
             itemsOnPage = ChangePictureUrl(itemsOnPage);
-
             var model = new PaginateditemsViewModel<EventItem>
             {
                 PageSize = pageSize,

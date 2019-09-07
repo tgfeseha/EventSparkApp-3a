@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using EventCatalogApi.Data;
+﻿using EventCatalogApi.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace EventCatalogApi
 {
@@ -26,13 +20,13 @@ namespace EventCatalogApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = Configuration["ConnectionString"];
-
-           // var server = Configuration["DatabaseServer"];
-           // var database = Configuration["DatabaseName"];
-           // var user = Configuration["DatabaseUser"];
-            //var password = Configuration["DatabaseUserPassword"];
-            //var connectionString = $"Server={server};Database={database};User ID={user};Password={password}";
+            //var connectionString = Configuration["ConnectionString"];
+            var server = Configuration["DatabaseServer"];
+            var database = Configuration["DatabaseName"];
+            var user = Configuration["DatabaseUser"];
+            var password = Configuration["DatabaseUserPassword"];
+            var connectionString = $"Server={server};Database={database};User ID={user};Password={password}";
+            
             services.AddDbContext<EventContext>(options => options.UseSqlServer(connectionString));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -59,8 +53,8 @@ namespace EventCatalogApi
             }
             app.UseSwagger().UseSwaggerUI(c =>
                 {
-                c.SwaggerEndpoint($"/swagger/v1/swagger.json", "EventAPI V1");
-            });
+                    c.SwaggerEndpoint($"/swagger/v1/swagger.json", "EventAPI V1");
+                });
             app.UseMvc();
         }
     }

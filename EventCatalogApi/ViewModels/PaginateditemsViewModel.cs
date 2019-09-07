@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace EventCatalogApi.ViewModels
 {
     public class PaginateditemsViewModel<TEntity>
-        where TEntity:class
+        where TEntity : class
     {
         public int PageSize { get; set; }
         public int PageIndex { get; set; }
